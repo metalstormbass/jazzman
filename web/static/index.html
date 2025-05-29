@@ -1,0 +1,51 @@
+<!-- filepath: /Users/mb/Projects/my-cli-app/web/static/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jazzman</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div style="position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh;">
+  <div class="container">
+    <img src="/static/jazzman.jpeg" alt="Unsettling Jazzman" class="jazzman-img" />
+    <h1>Jazzman</h1>
+    <div id="quote-box"><span id="quote" class="gestating">gestating</span></div>
+    <button onclick="getQuote()">Generate Another</button>
+    <div class="lyrics-ticker-box">
+      <span class="lyrics-ticker">
+        You just broke the news &bull; Giant steps in giant shoes &bull; Dignified as you strive &bull; Ever more satisfied &bull; You Know &bull; It′s an easy climb &bull; Stepping ten miles at a time &bull; Make the move as you prove &bull; Giant steps lose the blues
+      </span>
+    </div>
+  </div>
+</div>
+<script>
+function setGestating() {
+  const quoteElem = document.getElementById('quote');
+  quoteElem.textContent = 'gestating';
+  quoteElem.className = 'gestating';
+}
+function getQuote() {
+  const quoteElem = document.getElementById('quote');
+  setGestating();
+  fetch('/', {method: 'POST'})
+    .then(r => r.json())
+    .then(data => {
+      if (data && data.quote && data.quote.trim()) {
+        quoteElem.textContent = data.quote;
+        quoteElem.className = '';
+      } else {
+        setGestating();
+      }
+    })
+    .catch(() => {
+      setGestating();
+    });
+}
+// Load a quote on page load
+window.onload = getQuote;
+</script>
+</body>
+</html>

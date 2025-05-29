@@ -1,0 +1,3 @@
+// filepath: /Users/mb/Projects/my-cli-app/requirements.txt
+# No external dependencies required for basic functionality.
+requests

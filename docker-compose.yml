@@ -1,0 +1,28 @@
+// filepath: /Users/mb/Projects/my-cli-app/docker-compose.yml
+version: '3.8'
+services:
+  llm:
+    build:
+      context: .
+      dockerfile: ollama.Dockerfile
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+
+  jazzman:
+    build: .
+    environment:
+      - LLM_API_URL=http://llm:11434
+    depends_on:
+      - llm
+    ports:
+      - "8080:8080"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  ollama-data:
