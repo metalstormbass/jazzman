@@ -10,6 +10,8 @@ Dockerfile      # Container build for Go app
 README.md       # Project documentation
 go.mod          # Go module definition
 docker-compose.yml # Compose file for Go app and LLM service
+start.sh        # Startup script for Mac/Linux
+start.bat       # Startup script for Windows
 ```
 
 ## Prerequisites
@@ -34,10 +36,16 @@ Or download and unzip, then open a terminal in the project folder.
 
 ### 3. Build and Run the App
 
-Open a terminal (Command Prompt, PowerShell, or Terminal on Mac) and run:
+#### On Mac/Linux (zsh/bash):
 
 ```
-docker compose up --build
+./start.sh
+```
+
+#### On Windows (Command Prompt or PowerShell):
+
+```
+start.bat
 ```
 
 This will build and start both the Jazzman app and the Ollama LLM service. The first run may take a while as the LLM model is downloaded.
