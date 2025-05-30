@@ -44,7 +44,7 @@ assets/           # Screenshots and images for README
 - **Clone with Git:**
   ```sh
   git clone <your-repo-url>
-  cd my-cli-app
+  cd jazzman
   ```
 - **Or** download and unzip, then open a terminal in the project folder.
 
