@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 // filepath: /Users/mb/Projects/my-cli-app/Dockerfile
+=======
+>>>>>>> f1f5527 (All changes: static assets, Docker, Go, and UI polish)
 FROM golang:1.21-alpine AS build
 
 WORKDIR /app

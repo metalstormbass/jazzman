@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 // filepath: /Users/mb/Projects/my-cli-app/test/test_llm.sh
+=======
+>>>>>>> f1f5527 (All changes: static assets, Docker, Go, and UI polish)
 #!/bin/zsh
 
 LLM_API_URL=${LLM_API_URL:-http://localhost:11434}

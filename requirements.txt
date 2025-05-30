@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 // filepath: /Users/mb/Projects/my-cli-app/requirements.txt
 # No external dependencies required for basic functionality.
 requests
+=======
+# No external dependencies required for basic functionality.
+requests
+>>>>>>> f1f5527 (All changes: static assets, Docker, Go, and UI polish)

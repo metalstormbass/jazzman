@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /* filepath: /Users/mb/Projects/my-cli-app/web/static/style.css */
+=======
+>>>>>>> f1f5527 (All changes: static assets, Docker, Go, and UI polish)
 body {
   background: repeating-linear-gradient(135deg, #232526 0%, #414345 10%, #1a1a1a 20%, #232526 30%, #414345 40%, #1a1a1a 50%);
   color: #e0e0e0;
@@ -21,8 +24,21 @@ body {
   box-shadow: 0 0 40px 10px #ff00cc, 0 0 10px 2px #00ffcc;
   padding: 2.5rem 2.5rem 2rem 2.5rem;
   max-width: 420px;
+<<<<<<< HEAD
   text-align: center;
   transform: rotate(-2deg) scale(1.01);
+=======
+  min-width: 320px;
+  width: 380px;
+  min-height: 420px;
+  text-align: center;
+  transform: rotate(-2deg) scale(1.01);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+>>>>>>> f1f5527 (All changes: static assets, Docker, Go, and UI polish)
 }
 h1 {
   font-family: 'Impact', 'Arial Black', cursive, sans-serif;
@@ -40,19 +56,31 @@ h1 {
   padding: 1.2rem 1rem;
   margin: 1.5rem 0 2rem 0;
   min-height: 60px;
+<<<<<<< HEAD
+=======
+  min-width: 80px;
+>>>>>>> f1f5527 (All changes: static assets, Docker, Go, and UI polish)
   display: flex;
   align-items: center;
   justify-content: center;
   border: 2.5px dotted #00ffcc;
   transform: rotate(-1.5deg);
+<<<<<<< HEAD
   position: relative;
 }
 #quote {
   font-size: 1.25rem;
+=======
+  transition: min-height 0.2s, min-width 0.2s;
+}
+#quote {
+  font-size: 1.1rem;
+>>>>>>> f1f5527 (All changes: static assets, Docker, Go, and UI polish)
   color: #ffb347;
   transition: color 0.2s;
   font-family: 'Courier New', Courier, monospace;
   letter-spacing: 1px;
+<<<<<<< HEAD
 }
 #quote.gestating {
   color: #8888ff;
@@ -62,6 +90,20 @@ h1 {
   position: relative;
 }
 #quote.gestating::after {
+=======
+  min-width: 60px;
+  min-height: 1.2em;
+  display: inline-block;
+}
+#quote.loading {
+  color: #8888ff;
+  font-style: italic;
+  letter-spacing: 0.12em;
+  opacity: 0.8;
+  position: relative;
+}
+#quote.loading::after {
+>>>>>>> f1f5527 (All changes: static assets, Docker, Go, and UI polish)
   content: '';
   display: inline-block;
   width: 1.2em;

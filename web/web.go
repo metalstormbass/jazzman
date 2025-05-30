@@ -1,9 +1,15 @@
+<<<<<<< HEAD
 // filepath: /Users/mb/Projects/my-cli-app/web/web.go
+=======
+>>>>>>> f1f5527 (All changes: static assets, Docker, Go, and UI polish)
 package web
 
 import (
 	"encoding/json"
+<<<<<<< HEAD
 	"fmt"
+=======
+>>>>>>> f1f5527 (All changes: static assets, Docker, Go, and UI polish)
 	"jazzman/llm"
 	"net/http"
 	"path/filepath"
@@ -11,17 +17,34 @@ import (
 
 func Handler(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path == "/static/jazzman.jpeg" {
+<<<<<<< HEAD
 		// Serve the static image file
+=======
+>>>>>>> f1f5527 (All changes: static assets, Docker, Go, and UI polish)
 		imgPath := filepath.Join("web", "static", "jazzman.jpeg")
 		http.ServeFile(w, r, imgPath)
 		return
 	}
+<<<<<<< HEAD
+=======
+	if r.URL.Path == "/static/style.css" {
+		cssPath := filepath.Join("web", "static", "style.css")
+		http.ServeFile(w, r, cssPath)
+		return
+	}
+	if r.URL.Path == "/static/index.html" {
+		indexPath := filepath.Join("web", "static", "index.html")
+		http.ServeFile(w, r, indexPath)
+		return
+	}
+>>>>>>> f1f5527 (All changes: static assets, Docker, Go, and UI polish)
 	if r.Method == http.MethodPost {
 		quote := llm.GenerateBadJazzQuote()
 		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(map[string]string{"quote": quote})
 		return
 	}
+<<<<<<< HEAD
 	quote := llm.GenerateBadJazzQuote()
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	fmt.Fprintf(w, `<!DOCTYPE html>
@@ -151,4 +174,9 @@ function getQuote() { const quoteElem = document.getElementById('quote'); quoteE
 </div>
 </body>
 </html>`, quote)
+=======
+	// Serve static index.html for all other GET requests
+	indexPath := filepath.Join("web", "static", "index.html")
+	http.ServeFile(w, r, indexPath)
+>>>>>>> f1f5527 (All changes: static assets, Docker, Go, and UI polish)
 }

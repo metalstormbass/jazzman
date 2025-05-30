@@ -81,4 +81,8 @@ Marvel as Jazzman delivers the most unsettling, intentionally bad jazz quotes ev
 
 ---
 
+<<<<<<< HEAD
 > **Jazzman**: Because sometimes, the worst jazz is the best jazz.
+=======
+> **Jazzman**: Because sometimes, the worst jazz is the best jazz.
+>>>>>>> f1f5527 (All changes: static assets, Docker, Go, and UI polish)
