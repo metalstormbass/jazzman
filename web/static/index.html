@@ -23,26 +23,44 @@ btn.addEventListener('mouseleave', () => {
   btn.style.transform = '';
 });
 
+// Quote loading animation
+function setQuoteLoading() {
+  const quoteElem = document.getElementById('quote');
+  quoteElem.textContent = 'Loading';
+  quoteElem.className = 'loading';
+  let dots = 0;
+  if (quoteElem._interval) clearInterval(quoteElem._interval);
+  quoteElem._interval = setInterval(() => {
+    dots = (dots + 1) % 4;
+    quoteElem.textContent = 'Loading' + '.'.repeat(dots);
+  }, 350);
+}
+
+function clearQuoteLoading(text) {
+  const quoteElem = document.getElementById('quote');
+  if (quoteElem._interval) clearInterval(quoteElem._interval);
+  quoteElem.textContent = text;
+  quoteElem.className = '';
+}
+
 // Quote fetch logic
 function getQuote() {
-  const quoteElem = document.getElementById('quote');
-  quoteElem.textContent = 'Loading...';
+  setQuoteLoading();
   fetch('/', {method: 'POST'})
     .then(r => r.json())
     .then(data => {
       if (data && data.quote && data.quote.trim()) {
-        quoteElem.textContent = data.quote;
+        clearQuoteLoading(data.quote);
       } else {
-        quoteElem.textContent = 'Loading...';
+        setQuoteLoading();
       }
     })
     .catch(() => {
-      quoteElem.textContent = 'Loading...';
+      setQuoteLoading();
     });
 }
 
 window.onload = function() {
   getQuote();
 };
-</script>
-<!-- ...existing code... -->
+// ...existing code...
