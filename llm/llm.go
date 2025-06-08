@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-// filepath: /Users/mb/Projects/my-cli-app/llm/llm.go
-=======
->>>>>>> f1f5527 (All changes: static assets, Docker, Go, and UI polish)
 package llm
 
 import (
